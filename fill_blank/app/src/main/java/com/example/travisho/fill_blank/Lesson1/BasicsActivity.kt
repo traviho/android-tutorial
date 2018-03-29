@@ -1,10 +1,10 @@
-package com.example.travisho.complete.Lesson1
+package com.example.travisho.fill_blank.Lesson1
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.travisho.complete.MainActivity
-import com.example.travisho.complete.R
+import com.example.travisho.fill_blank.MainActivity
+import com.example.travisho.fill_blank.R
 import kotlinx.android.synthetic.main.activity_basics.*
 
 class BasicsActivity : AppCompatActivity() {
@@ -13,11 +13,8 @@ class BasicsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basics)
 
-        set_text_button.setOnClickListener { hello_text.text = "Hello World" }
+        /*Upon clicking set_text_button set the text of hello_text to “hello world”*/
 
-        back_button.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+        /*Upon clicking back_button, launch activity MainActivity*/
     }
 }
