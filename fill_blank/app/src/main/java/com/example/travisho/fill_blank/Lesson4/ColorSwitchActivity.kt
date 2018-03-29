@@ -147,7 +147,7 @@ class ColorSwitchActivity : AppCompatActivity() {
                 ContextCompat.getColor(applicationContext, R.color.arena_yellow),
                 ContextCompat.getColor(applicationContext, R.color.arena_green),
                 ContextCompat.getColor(applicationContext, R.color.arena_blue))
-        connectSocket()
+        // connectSocket()
         /*
         if ((applicationContext as MainApplication).queue == null) {
             (applicationContext as MainApplication).queue = Volley.newRequestQueue(this)
