@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io('http://localhost:3000');
+      function startColorSwitchGame() {
+        socket.emit('startGame', {});
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+        <button onClick="startColorSwitchGame()">Start Color Switch Game!</button>
+        <ul id="list_requests">
+  
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+      socket.on('update', function (data) {
+        if (data.username != undefined) {
+          $('#list_requests').append('<li>'+'<b>' + data.username +'</b> logged in!</li>');
+        } else if (data.score != undefined) {
+          $('#list_requests').append('<li>'+'Someone scored <b>' + data.score +'</b>.</li>');
+        }
+      });
+    </script>
+  </body>
+</html>
