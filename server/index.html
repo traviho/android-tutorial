@@ -3,7 +3,7 @@
   <head>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      const socket = io('http://localhost:3000');
+      const socket = io('http://eb-node-express-socket-dev.us-east-1.elasticbeanstalk.com/');
       function startColorSwitchGame() {
         socket.emit('startGame', {});
       }
@@ -12,12 +12,16 @@
   <body>
     <div>
         <button onClick="startColorSwitchGame()">Start Color Switch Game!</button>
+        <button onClick="clearList()">Clear</button>
         <ul id="list_requests">
   
         </ul>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
+      function clearList() {
+        $('#list_requests').text('');
+      }
       socket.on('update', function (data) {
         if (data.username != undefined) {
           $('#list_requests').append('<li>'+'<b>' + data.username +'</b> logged in!</li>');

@@ -1,4 +1,5 @@
-const express = require('express'),
+const port = process.env.PORT || 3000,
+express = require('express'),
 app = express(),
 http = require('http').Server(app),
 io = require('socket.io')(http),
@@ -30,4 +31,4 @@ app.post('/api/score', (req, res) => {
   res.sendStatus(200);
 });
 
-http.listen(3000, () => console.log('Example app listening on port 3000!'));
+http.listen(port);
